@@ -9,10 +9,8 @@ def main():
         config_dict = yaml.load(f)
     # print(config_dict)
 
-    cache_path: dict = config_dict.get('clear_cache_path')
     deal_process = config_dict.get('app_path')
-    # cache_pre_wd = cache_path.get('pre_wd')
-    # cache_gui = cache_path.get('gui')
+    cache_path: list = config_dict.get('clear_cache_path')
 
     if not all([deal_process, cache_path]):
         return
@@ -23,7 +21,7 @@ def main():
         except Exception as e:
             print(e)
 
-    for i in cache_path.values():
+    for i in cache_path:
         if os.path.exists(i):
             shutil.rmtree(i)
             os.makedirs(i)
