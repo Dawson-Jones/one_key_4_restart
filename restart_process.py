@@ -18,7 +18,7 @@ def one_key():
         'clear_cache_path': ['C:/Users/yc-pc/Desktop/dobby/gui_jkus-0.1.4/gui_jkus-0.1.4/resources/app/src/cache',
                              'C:/Users/yc-pc/Desktop/dobby/el_panel-jkf5-0.4.0/temp_pic']
         'copy': [
-            ['/home/ubuntu/Pictures/chinese.png', '/home/ubuntu/Pictures/C']
+            ['/home/ubuntu/Pictures/3.jpg', '/home/ubuntu/Pictures/C']
         ]
     }
     """

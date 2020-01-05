@@ -9,7 +9,7 @@ clear_cache_path:
 
 copy:
   -
-    - /home/ubuntu/Pictures/chinese.png
+    - /home/ubuntu/Pictures/3.jpg
     - /home/ubuntu/Pictures/C
 
 mouse_click:

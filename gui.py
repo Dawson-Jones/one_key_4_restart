@@ -11,14 +11,12 @@ class OneKey(QWidget, Ui_Form):
         self.setupUi(self)
 
     def next_step(self):
-        if self.step_num == 1:
-            self.confirm_widget()
-        if self.step_num == 2:
-            self.el_set_0()
+        self.show_img(self.step_num)
 
-    def confirm_widget(self):
-        self.cn_lb.setText("确认EL外是否有组件")
-        self.en_lb.setText("Confirm if there are widget outside the EL")
+    def show_img(self, num):
+        self.load_img = QPixmap(f'./resource/img/{num}.jpg')
+        self.img_file = self.load_img.scaled(self.img_lb.size(), aspectRatioMode=Qt.KeepAspectRatio)
+        self.img_lb.setPixmap(self.img_file)
         self.step_num += 1
 
 

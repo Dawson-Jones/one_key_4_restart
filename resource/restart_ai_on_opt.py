@@ -17,8 +17,8 @@ class Ui_Form(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
         self.img_lb = QtWidgets.QLabel(Form)
-        self.img_lb.setStyleSheet("background-color: rgb(85, 255, 255);")
         self.img_lb.setText("")
+        self.img_lb.setAlignment(QtCore.Qt.AlignCenter)
         self.img_lb.setObjectName("img_lb")
         self.verticalLayout.addWidget(self.img_lb)
         self.confim = QtWidgets.QPushButton(Form)
@@ -41,7 +41,6 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.confim.setText(_translate("Form", "下一步/next"))
-import image_rc
 
 
 if __name__ == "__main__":
