@@ -13,30 +13,14 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="4,4,1">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="8,1">
    <item>
-    <widget class="QLabel" name="cn_lb">
+    <widget class="QLabel" name="img_lb">
      <property name="styleSheet">
-      <string notr="true">font: 18pt &quot;Ubuntu Mono&quot;;</string>
+      <string notr="true">background-color: rgb(85, 255, 255);</string>
      </property>
      <property name="text">
-      <string>启动opt电脑上的AI重置程序</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="en_lb">
-     <property name="styleSheet">
-      <string notr="true">font: 18pt &quot;Ubuntu Mono&quot;;</string>
-     </property>
-     <property name="text">
-      <string>Start the AI reset program on the opt computer</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <string/>
      </property>
     </widget>
    </item>
@@ -48,13 +32,38 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;Sans Serif&quot;;</string>
+     </property>
      <property name="text">
-      <string>OK</string>
+      <string>下一步/next</string>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
- <resources/>
- <connections/>
+ <resources>
+  <include location="../image.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>confim</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>next_step()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>392</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>553</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>next_step()</slot>
+ </slots>
 </ui>

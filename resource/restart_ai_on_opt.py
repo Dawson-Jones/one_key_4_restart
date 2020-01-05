@@ -16,37 +16,32 @@ class Ui_Form(object):
         Form.resize(645, 450)
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.cn_lb = QtWidgets.QLabel(Form)
-        self.cn_lb.setStyleSheet("font: 18pt \"Ubuntu Mono\";")
-        self.cn_lb.setAlignment(QtCore.Qt.AlignCenter)
-        self.cn_lb.setObjectName("cn_lb")
-        self.verticalLayout.addWidget(self.cn_lb)
-        self.en_lb = QtWidgets.QLabel(Form)
-        self.en_lb.setStyleSheet("font: 18pt \"Ubuntu Mono\";")
-        self.en_lb.setAlignment(QtCore.Qt.AlignCenter)
-        self.en_lb.setObjectName("en_lb")
-        self.verticalLayout.addWidget(self.en_lb)
+        self.img_lb = QtWidgets.QLabel(Form)
+        self.img_lb.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.img_lb.setText("")
+        self.img_lb.setObjectName("img_lb")
+        self.verticalLayout.addWidget(self.img_lb)
         self.confim = QtWidgets.QPushButton(Form)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.confim.sizePolicy().hasHeightForWidth())
         self.confim.setSizePolicy(sizePolicy)
+        self.confim.setStyleSheet("font: 14pt \"Sans Serif\";")
         self.confim.setObjectName("confim")
         self.verticalLayout.addWidget(self.confim)
-        self.verticalLayout.setStretch(0, 4)
-        self.verticalLayout.setStretch(1, 4)
-        self.verticalLayout.setStretch(2, 1)
+        self.verticalLayout.setStretch(0, 8)
+        self.verticalLayout.setStretch(1, 1)
 
         self.retranslateUi(Form)
+        self.confim.clicked.connect(Form.next_step)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.cn_lb.setText(_translate("Form", "启动opt电脑上的AI重置程序"))
-        self.en_lb.setText(_translate("Form", "Start the AI reset program on the opt computer"))
-        self.confim.setText(_translate("Form", "OK"))
+        self.confim.setText(_translate("Form", "下一步/next"))
+import image_rc
 
 
 if __name__ == "__main__":
