@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cb6684a-01ab-4c5a-a1e4-e4e33eb4893a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resource/img/2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/img/chinese.png" beforeDir="false" afterPath="$PROJECT_DIR$/resource/img/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/restart_ai_on_opt.py" beforeDir="false" afterPath="$PROJECT_DIR$/resource/restart_ai_on_opt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/ui/restart_ai_on_opt.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resource/ui/restart_ai_on_opt.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restart_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/restart_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/img/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resource/img/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/img/english.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/img/icon_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/img/icon_white.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,27 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.one_key_gui">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="one_key_for_restart" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="one_key_gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="one_key_for_restart" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,6 +126,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.one_key_gui" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.restart_ai_on_opt" />
         <item itemvalue="Python.restart_process" />
       </list>
@@ -146,30 +167,34 @@
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="737" y="370" key="#com.intellij.tools.ToolEditorDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1578215158252" />
+    <state x="165" y="96" width="1655" height="884" key="DiffContextDialog" timestamp="1578232814654">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="165" y="96" width="1655" height="884" key="DiffContextDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1578232814654" />
     <state x="780" y="297" key="FileChooserDialogImpl" timestamp="1578213802115">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="780" y="297" key="FileChooserDialogImpl/65.24.1855.1056@65.24.1855.1056" timestamp="1578213802115" />
-    <state width="1832" height="296" key="GridCell.Tab.0.bottom" timestamp="1578220979226">
+    <state width="1832" height="296" key="GridCell.Tab.0.bottom" timestamp="1578235031243">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state width="1453" height="224" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1578136615146" />
-    <state width="1832" height="296" key="GridCell.Tab.0.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1578220979226" />
-    <state width="1832" height="296" key="GridCell.Tab.0.center" timestamp="1578220979226">
+    <state width="1832" height="296" key="GridCell.Tab.0.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1578235031243" />
+    <state width="1832" height="296" key="GridCell.Tab.0.center" timestamp="1578235031241">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state width="1453" height="224" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1578136615146" />
-    <state width="1832" height="296" key="GridCell.Tab.0.center/65.24.1855.1056@65.24.1855.1056" timestamp="1578220979226" />
-    <state width="1832" height="296" key="GridCell.Tab.0.left" timestamp="1578220979225">
+    <state width="1832" height="296" key="GridCell.Tab.0.center/65.24.1855.1056@65.24.1855.1056" timestamp="1578235031241" />
+    <state width="1832" height="296" key="GridCell.Tab.0.left" timestamp="1578235031240">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state width="1453" height="224" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1578136615146" />
-    <state width="1832" height="296" key="GridCell.Tab.0.left/65.24.1855.1056@65.24.1855.1056" timestamp="1578220979225" />
-    <state width="1832" height="296" key="GridCell.Tab.0.right" timestamp="1578220979226">
+    <state width="1832" height="296" key="GridCell.Tab.0.left/65.24.1855.1056@65.24.1855.1056" timestamp="1578235031240" />
+    <state width="1832" height="296" key="GridCell.Tab.0.right" timestamp="1578235031242">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state width="1453" height="224" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1578136615146" />
-    <state width="1832" height="296" key="GridCell.Tab.0.right/65.24.1855.1056@65.24.1855.1056" timestamp="1578220979226" />
+    <state width="1832" height="296" key="GridCell.Tab.0.right/65.24.1855.1056@65.24.1855.1056" timestamp="1578235031242" />
     <state x="486" y="174" key="SettingsEditor" timestamp="1578218452005">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
