@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="4,4,1">
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="cn_lb">
      <property name="styleSheet">
       <string notr="true">font: 18pt &quot;Ubuntu Mono&quot;;</string>
      </property>
@@ -28,7 +28,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="en_lb">
      <property name="styleSheet">
       <string notr="true">font: 18pt &quot;Ubuntu Mono&quot;;</string>
      </property>
@@ -41,7 +41,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="confim">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
