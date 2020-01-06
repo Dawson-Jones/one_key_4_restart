@@ -1,4 +1,3 @@
-import sys
 from PyQt5.Qt import *
 from resource.restart_ai_on_opt import Ui_Form
 
@@ -14,8 +13,8 @@ class OneKey(QWidget, Ui_Form):
 
     def next_step(self):
         if self.step_num == 4:
-            QCoreApplication.quit()
-            sys.exit()
+            self.close()
+            return
         if self.step_num != 2:
             self.show_img(self.step_num)
             return
