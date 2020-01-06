@@ -17,7 +17,7 @@ class Ui_Form(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
         self.img_lb = QtWidgets.QLabel(Form)
-        self.img_lb.setText("")
+        self.img_lb.setStyleSheet("font: 20pt \"Sans Serif\";")
         self.img_lb.setAlignment(QtCore.Qt.AlignCenter)
         self.img_lb.setObjectName("img_lb")
         self.verticalLayout.addWidget(self.img_lb)
@@ -40,6 +40,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
+        self.img_lb.setText(_translate("Form", "重启软件/restart applications"))
         self.confim.setText(_translate("Form", "下一步/next"))
 
 

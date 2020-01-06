@@ -16,8 +16,11 @@
   <layout class="QVBoxLayout" name="verticalLayout" stretch="8,1">
    <item>
     <widget class="QLabel" name="img_lb">
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Sans Serif&quot;;</string>
+     </property>
      <property name="text">
-      <string/>
+      <string>重启软件/restart applications</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -42,9 +45,7 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../image.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>confim</sender>

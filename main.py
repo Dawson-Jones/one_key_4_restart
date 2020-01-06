@@ -15,9 +15,10 @@ def send_http(flag):
 
 
 if __name__ == '__main__':
-    # one_key()
     app = QApplication(sys.argv)
     window = OneKey()
     window.show()
+    # window.restart_signal.connect(one_key)
+    window.restart_signal.connect(lambda: print("重启"))
     window.send_info_signal.connect(send_http)
     sys.exit(app.exec_())
