@@ -1,3 +1,4 @@
+import sys
 from PyQt5.Qt import *
 from resource.restart_ai_on_opt import Ui_Form
 
@@ -18,8 +19,7 @@ class OneKey(QWidget, Ui_Form):
         if self.step_num != 2:
             self.show_img(self.step_num)
             return
-        reply = QMessageBox.question(self, "", "EL 外是否有组件?", QMessageBox.Yes | QMessageBox.No,
-                                     QMessageBox.Yes)
+        reply = QMessageBox.question(self, "", "EL 外是否有组件?", QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.send_info_signal.emit(1)
         elif reply == QMessageBox.No:
