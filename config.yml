@@ -16,3 +16,8 @@ mouse_click:
   -
     - 200  # x
     - 400  # y
+
+url_config:
+  plc_url: localhost:9111/plc
+  plc_station: 2
+  panel_incoming_plc_address: D399
