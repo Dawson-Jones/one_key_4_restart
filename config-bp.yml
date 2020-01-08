@@ -16,6 +16,7 @@ mouse_click:
   -
     - 200  # x
     - 400  # y
+    - 3
 
 url_config:
   plc_url: localhost:9111/plc

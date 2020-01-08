@@ -61,7 +61,7 @@ def one_key():
     # click
     coord_group = config_dict.get("mouse_click")
     if coord_group:
-        time.sleep(3)
+        time.sleep(coord_group[2])
         for coord in coord_group:
             pyautogui.moveTo(int(coord[0]), int(coord[1]), duration=0.25)
             pyautogui.click(int(coord[0]), int(coord[1]))
