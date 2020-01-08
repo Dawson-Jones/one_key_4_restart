@@ -1,7 +1,7 @@
 # 配置
 ### 写在最前
-所有的文件路径必须使用 “/” 而不是 “\” ！！！！  
-all path must use “/” instead of “\”  !!!!
+所有的文件路径必须使用 “/” 而不是 “\” 
+all path must use “/” instead of “\”  
 
 ### config.yml  
 - `app_path` **必选**  
@@ -10,7 +10,7 @@ all path must use “/” instead of “\”  !!!!
     > 推荐使用**软链接**(快捷方式), 使用exe 依赖文件需按照一键启动目录为根目录
 - `clear_cache_path`  **必选**  
     清理的缓存路径  
-    ***注意！！***
+    ***注意***
     > 1. 只会清理配置路径下的所有文件  
         eg:   
         `C:/Users/yc-pc/Desktop/dobby/gui_jkus-0.1.4/gui_jkus-0.1.4/resources/app/src/cache` 会保留cache文件夹, 删除cache下的所有文件  
