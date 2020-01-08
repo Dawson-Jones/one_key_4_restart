@@ -10,12 +10,13 @@ def send_http(flag):
     params = {
         'op': 'write_int',
         'station': restart_process.url_config['plc_station'],
-        'address': restart_process.url_config['panel_incoming_plc_address'],
     }
     if flag:
         params['value'] = 2
+        params['address'] = restart_process.url_config['revolving_table_position']
         requests.get(url='http://{}'.format(restart_process.url_config['plc_url']), params=params)
     params['value'] = 0
+    params['address'] = restart_process.url_config['el_position']
     requests.get(url='http://{}'.format(restart_process.url_config['plc_url']), params=params)
 
 
