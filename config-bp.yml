@@ -1,7 +1,7 @@
 app_path:
-  - C:/Users/yc-pc/Desktop/dobby/yc_pc/PLCTest_Kevin/PLCTest_Kevin/PLCTest/bin/Debug/PLCTest.exe
-  - C:/Users/yc-pc/Desktop/dobby/yc_pc/el_panel-jkf5-0.4.0/main.exe
-  - C:/Users/yc-pc/Desktop/dobby/yc_pc/gui_jkus-0.1.4/gui_jkus-0.1.4/el-jk-us.exe
+  - C:/Users/yc-pc/Desktop/PLCTest.exe.lnk
+  - C:/Users/yc-pc/Desktop/main.exe.lnk
+  - C:/Users/yc-pc/Desktop/el-jk-us.exe.lnk
 
 clear_cache_path:
   - C:/Users/yc-pc/Desktop/dobby/gui_jkus-0.1.4/gui_jkus-0.1.4/resources/app/src/cache
