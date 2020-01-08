@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>645</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="8,1">
+   <item>
+    <widget class="QLabel" name="img_lb">
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Sans Serif&quot;;</string>
+     </property>
+     <property name="text">
+      <string>重启软件/restart applications</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="confim">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;Sans Serif&quot;;</string>
+     </property>
+     <property name="text">
+      <string>下一步/next</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>confim</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>next_step()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>392</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>553</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>next_step()</slot>
+ </slots>
+</ui>

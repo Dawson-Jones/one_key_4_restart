@@ -1,34 +1,30 @@
-import time
-import os
-import shutil
-import yaml
+import sys
+import requests
+from concurrent import futures
+from PyQt5.Qt import *
+import restart_process
+from gui import OneKey
 
 
-def main():
-    with open('config.yml') as f:
-        config_dict = yaml.load(f)
-    # print(config_dict)
-
-    deal_process = config_dict.get('app_path')
-    cache_path: list = config_dict.get('clear_cache_path')
-
-    if not all([deal_process, cache_path]):
-        return
-
-    for i in deal_process:
-        try:
-            os.popen('taskkill /im {} -f'.format(os.path.split(i)[-1]))
-        except Exception as e:
-            print(e)
-
-    for i in cache_path:
-        if os.path.exists(i):
-            shutil.rmtree(i)
-            os.makedirs(i)
-
-    for i in deal_process:
-        os.startfile(i)
+def send_http(flag):
+    params = {
+        'op': 'write_int',
+        'station': restart_process.url_config['plc_station'],
+    }
+    if flag:
+        params['value'] = 2
+        params['address'] = restart_process.url_config['revolving_table_position']
+        requests.get(url='http://{}'.format(restart_process.url_config['plc_url']), params=params)
+    params['value'] = 0
+    params['address'] = restart_process.url_config['el_position']
+    requests.get(url='http://{}'.format(restart_process.url_config['plc_url']), params=params)
 
 
 if __name__ == '__main__':
-    main()
+    app = QApplication(sys.argv)
+    window = OneKey()
+    window.show()
+    window.restart_signal.connect(restart_process.one_key)
+    # window.restart_signal.connect(lambda: print("重启"))
+    window.send_info_signal.connect(send_http)
+    sys.exit(app.exec_())
