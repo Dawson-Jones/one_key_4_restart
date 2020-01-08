@@ -33,7 +33,6 @@ def one_key():
             p = psutil.Process(pid)
             processing_name = p.name()
             if processing_name in process_name:
-                print(processing_name)
                 os.popen('taskkill /im {} -f'.format(processing_name))
                 process_name.remove(processing_name)
             if not process_name:
@@ -54,7 +53,6 @@ def one_key():
             shutil.copy(copy_path[0], copy_path[1])
 
     # restart process
-    # print(deal_process_path)
     for i in deal_process_path:
         os.startfile(i)
 
