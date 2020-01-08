@@ -15,6 +15,4 @@ all path must use “/” instead of “\”  !!!!
         `C:/Users/yc-pc/Desktop/dobby/gui_jkus-0.1.4/gui_jkus-0.1.4/resources/app/src/cache` 会保留cache文件夹, 删除cache下的所有文件  
     > 2. 使用缓存路径的时候，请确保路径配置正确。路径配置错误可能会出现不可挽回的后果
 
-### .env  
-为gui启动的配置文件，只需保证与一键启动文件在同一路径下，可忽略
                              

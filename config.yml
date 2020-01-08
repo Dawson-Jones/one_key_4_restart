@@ -1,21 +1,11 @@
 app_path:
-  - C:/Users/yc-pc/Desktop/dobby/yc_pc/PLCTest_Kevin/PLCTest_Kevin/PLCTest/bin/Debug/PLCTest.exe
-  - C:/Users/yc-pc/Desktop/dobby/yc_pc/el_panel-jkf5-0.4.0/main.exe
-  - C:/Users/yc-pc/Desktop/dobby/yc_pc/gui_jkus-0.1.4/gui_jkus-0.1.4/el-jk-us.exe
+  - C:/Users/yc-pc/Desktop/PLCTest.exe.lnk
+  - C:/Users/yc-pc/Desktop/main.exe.lnk
+  - C:/Users/yc-pc/Desktop/el-jk-us.exe.lnk
 
 clear_cache_path:
   - C:/Users/yc-pc/Desktop/dobby/gui_jkus-0.1.4/gui_jkus-0.1.4/resources/app/src/cache
   - C:/Users/yc-pc/Desktop/dobby/el_panel-jkf5-0.4.0/temp_pic
-
-copy:
-  -
-    - /home/ubuntu/Pictures/3.jpg
-    - /home/ubuntu/Pictures/C
-
-mouse_click:
-  -
-    - 200  # x
-    - 400  # y
 
 url_config:
   plc_url: localhost:9111/plc
