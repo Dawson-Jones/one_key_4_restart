@@ -41,10 +41,17 @@ def one_key():
             print(e)
 
     # clear cache
-    for i in cache_path:
-        if os.path.exists(i):
-            shutil.rmtree(i)
-            os.makedirs(i)
+    print(cache_path, '  ', len(cache_path))
+    try:
+        for i in cache_path:
+            print(i)
+            if os.path.exists(i):
+                shutil.rmtree(i)
+                os.makedirs(i)
+            else:
+                print('path not exists')
+    except Exception as e:
+        print(e)
 
     # copy file
     copy_file = config_dict.get("copy")
