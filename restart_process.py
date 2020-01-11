@@ -1,10 +1,10 @@
 import time
-import re
 import os
 import shutil
 import yaml
 import psutil
 import pyautogui
+from get_window_and_maximize import cWindow
 
 url_config = dict()
 
@@ -14,34 +14,47 @@ def one_key():
         config_dict = yaml.load(f, Loader=yaml.Loader)
     global url_config
     url_config = config_dict.get('url_config')
+    '''
+    {
+        'app_path': [
+            'C:/Users/yc-pc/Desktop/PLCTest.exe.lnk',
+            'C:/Users/yc-pc/Desktop/main.exe.lnk',
+            'C:/Users/yc-pc/Desktop/el-jk-us.exe.lnk'],
+        'kill_app': ['PLCTest.exe', 'main.exe', 'el-jk-us.exe'],
+        'clear_cache_path': [
+            'C:/Users/yc-pc/Desktop/dobby/yc_pc/gui_jkus-0.1.4/gui_jkus-0.1.4/resources/app/src/cache',
+            'C:/Users/yc-pc/Desktop/dobby/yc_pc/el_panel-jkf5-0.4.0/temp_pic'
+        ],
+        'url_config': {
+            'plc_url': '192.168.1.4:9111/plc',
+            'plc_station': 2,
+            'el_position': 'D399',
+            'revolving_table_position': 'D399'
+        }
+    }
+    '''
 
     deal_process_path = config_dict.get('app_path')
+    kill_app = config_dict.get('kill_app')
     cache_path: list = config_dict.get('clear_cache_path')
-    if not all([deal_process_path, cache_path]):
+    if not all([deal_process_path, cache_path, kill_app]):
         return
 
     # kill process
-    process_name = list()
-    for i in deal_process_path:
-        temp_name = os.path.split(i)[-1]
-        ret = re.match(r'([^\.]+)\.', temp_name)
-        process_name.append(ret.group(1) + '.exe')
-
     pids = psutil.pids()
     for pid in pids:
         try:
             p = psutil.Process(pid)
             processing_name = p.name()
-            if processing_name in process_name:
-                os.popen('taskkill /im {} -f'.format(processing_name))
-                process_name.remove(processing_name)
-            if not process_name:
+            if processing_name in kill_app:
+                os.system('taskkill /im {} -f'.format(processing_name))
+                kill_app.remove(processing_name)
+            if not kill_app:
                 break
         except Exception as e:
             print(e)
 
     # clear cache
-    print(cache_path, '  ', len(cache_path))
     try:
         for i in cache_path:
             print(i)
@@ -61,7 +74,15 @@ def one_key():
 
     # restart process
     for i in deal_process_path:
-        os.startfile(i)
+        os.system(i)
+
+    # maximize
+    app_name = config_dict.get('maximize_app')
+    regex = '.*{}.*'.format(app_name)
+    cw = cWindow()
+    cw.find_window_regex(regex)
+    cw.Maximize()
+    cw.SetAsForegroundWindow()
 
     # click
     coord_group = config_dict.get("mouse_click")

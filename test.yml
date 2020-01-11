@@ -1,0 +1,19 @@
+app_path:
+  - C:/Users/yc-pc/Desktop/PLCTest.exe.lnk
+  - C:/Users/yc-pc/Desktop/main.exe.lnk
+  - C:/Users/yc-pc/Desktop/el-jk-us.exe.lnk
+
+kill_app:
+  - PLCTest.exe
+  - main.exe
+  - el-jk-us.exe
+
+clear_cache_path:
+  - C:/Users/yc-pc/Desktop/dobby/yc_pc/gui_jkus-0.1.4/gui_jkus-0.1.4/resources/app/src/cache
+  - C:/Users/yc-pc/Desktop/dobby/yc_pc/el_panel-jkf5-0.4.0/temp_pic
+
+url_config:
+  plc_url: 192.168.1.4:9111/plc
+  plc_station: 2
+  el_position: D399
+  revolving_table_position: D399

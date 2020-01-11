@@ -11,9 +11,10 @@ class OneKey(QWidget, Ui_Form):
         super().__init__()
         self.setAttribute(Qt.WA_StyledBackground, True)
         self.setupUi(self)
+        self.setWindowFlags(Qt.WindowStaysOnTopHint)
 
     def next_step(self):
-        if self.step_num == 4:
+        if self.step_num == 5:
             self.close()
             return
         if self.step_num != 2:
@@ -33,7 +34,7 @@ class OneKey(QWidget, Ui_Form):
         self.load_img = QPixmap(f'./resource/img/{self.step_num}.jpg')
         self.img_file = self.load_img.scaled(self.img_lb.size(), aspectRatioMode=Qt.KeepAspectRatio)
         self.img_lb.setPixmap(self.img_file)
-        if self.step_num == 3:
+        if self.step_num == 4:
             self.confim.setText("OK")
         self.step_num += 1
 
