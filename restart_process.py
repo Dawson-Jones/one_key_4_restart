@@ -4,6 +4,7 @@ import shutil
 import yaml
 import psutil
 import pyautogui
+import traceback
 from get_window_and_maximize import cWindow
 
 url_config = dict()
@@ -36,6 +37,7 @@ def one_key():
 
     deal_process_path = config_dict.get('app_path')
     kill_app = config_dict.get('kill_app')
+    kill_app = [i.lower() for i in kill_app]
     cache_path: list = config_dict.get('clear_cache_path')
     if not all([deal_process_path, cache_path, kill_app]):
         return
@@ -47,7 +49,7 @@ def one_key():
             p = psutil.Process(pid)
             processing_name = p.name()
             if processing_name in kill_app:
-                os.system('taskkill /im {} -f'.format(processing_name))
+                os.popen('taskkill /im {} -f'.format(processing_name))
                 kill_app.remove(processing_name)
             if not kill_app:
                 break
@@ -74,18 +76,10 @@ def one_key():
 
     # restart process
     for i in deal_process_path:
-        os.system(i)
+        os.startfile(i)
 
     time.sleep(3)
     pyautogui.press("enter")
-
-    # maximize
-    app_name = config_dict.get('maximize_app')
-    regex = '.*{}.*'.format(app_name)
-    cw = cWindow()
-    cw.find_window_regex(regex)
-    cw.Maximize()
-    cw.SetAsForegroundWindow()
 
     # click
     coord_group = config_dict.get("mouse_click")
@@ -94,6 +88,19 @@ def one_key():
             time.sleep(coord_group[2])
             pyautogui.moveTo(int(coord[0]), int(coord[1]), duration=0.25)
             pyautogui.click(int(coord[0]), int(coord[1]))
+            if coord_group.index(coord) == 0:
+                # maximize
+                try:
+                    time.sleep(2)
+                    app_name = config_dict.get('maximize_app')
+                    regex = '.*{}.*'.format(app_name)
+                    cw = cWindow()
+                    cw.find_window_regex(regex)
+                    cw.Maximize()
+                    cw.SetAsForegroundWindow()
+                except Exception:
+                    with open('log.txt', 'w') as f:
+                        f.write(traceback.format_exc())
 
 
 if __name__ == '__main__':

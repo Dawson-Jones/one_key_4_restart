@@ -48,6 +48,9 @@ class OneKey(QWidget, Ui_Form):
             self.confim.setText("OK")
         self.step_num += 1
 
+    def send_failed(self):
+        QMessageBox.information(self, '', '发送plc失败', QMessageBox.Ok)
+
 
 if __name__ == '__main__':
     import sys

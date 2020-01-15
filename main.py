@@ -7,18 +7,20 @@ from gui import OneKey
 
 
 def send_http(flag):
-    # print("64648943134846")
     params = {
         'op': 'write_int',
         'station': restart_process.url_config['plc_station'],
     }
-    if flag:
-        params['value'] = 2
-        params['address'] = restart_process.url_config['revolving_table_position']
+    try:
+        if flag:
+            params['value'] = 2
+            params['address'] = restart_process.url_config['revolving_table_position']
+            requests.get(url='http://{}'.format(restart_process.url_config['plc_url']), params=params)
+        params['value'] = 0
+        params['address'] = restart_process.url_config['el_position']
         requests.get(url='http://{}'.format(restart_process.url_config['plc_url']), params=params)
-    params['value'] = 0
-    params['address'] = restart_process.url_config['el_position']
-    requests.get(url='http://{}'.format(restart_process.url_config['plc_url']), params=params)
+    except:
+        window.send_failed()
 
 
 if __name__ == '__main__':
