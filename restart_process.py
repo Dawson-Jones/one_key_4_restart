@@ -10,7 +10,7 @@ url_config = dict()
 
 
 def one_key():
-    with open('config.yml') as f:
+    with open('config.yml', encoding='utf-8') as f:
         config_dict = yaml.load(f, Loader=yaml.Loader)
     global url_config
     url_config = config_dict.get('url_config')
@@ -75,6 +75,9 @@ def one_key():
     # restart process
     for i in deal_process_path:
         os.system(i)
+
+    time.sleep(3)
+    pyautogui.press("enter")
 
     # maximize
     app_name = config_dict.get('maximize_app')

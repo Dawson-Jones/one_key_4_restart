@@ -10,8 +10,18 @@ class OneKey(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
         self.setAttribute(Qt.WA_StyledBackground, True)
+        self.setWindowFlags(Qt.FramelessWindowHint)  # don't show title bar
+        self.right_top()
         self.setupUi(self)
         self.setWindowFlags(Qt.WindowStaysOnTopHint)
+
+    def right_top(self):
+        screen = QDesktopWidget().screenGeometry()
+        size = self.geometry()
+        self.move(
+            screen.width() - size.width(),
+            0
+        )
 
     def next_step(self):
         if self.step_num == 5:
