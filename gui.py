@@ -9,11 +9,23 @@ class OneKey(QWidget, Ui_Form):
 
     def __init__(self):
         super().__init__()
-        self.setAttribute(Qt.WA_StyledBackground, True)
         self.setupUi(self)
+        self.setAttribute(Qt.WA_StyledBackground, True)
+        self.setWindowFlags(Qt.FramelessWindowHint)  # don't show title bar
+        self.right_top()
+        self.setWindowFlags(Qt.WindowStaysOnTopHint)
+
+    def right_top(self):
+        screen = QDesktopWidget().screenGeometry()
+        # size = self.geometry()
+        self.resize(screen.width() // 2, screen.height() // 2)
+        self.move(
+            screen.width() - screen.width() // 2,
+            0
+        )
 
     def next_step(self):
-        if self.step_num == 4:
+        if self.step_num == 5:
             self.close()
             return
         if self.step_num != 2:
@@ -33,9 +45,12 @@ class OneKey(QWidget, Ui_Form):
         self.load_img = QPixmap(f'./resource/img/{self.step_num}.jpg')
         self.img_file = self.load_img.scaled(self.img_lb.size(), aspectRatioMode=Qt.KeepAspectRatio)
         self.img_lb.setPixmap(self.img_file)
-        if self.step_num == 3:
+        if self.step_num == 4:
             self.confim.setText("OK")
         self.step_num += 1
+
+    def send_failed(self):
+        QMessageBox.information(self, '', '发送plc失败', QMessageBox.Ok)
 
 
 if __name__ == '__main__':
